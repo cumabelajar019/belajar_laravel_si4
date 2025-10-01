@@ -4,17 +4,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return 'Hello, World!';
+    return view('index');
 });
 
 Route::get('about', function () {
-    return 'Ini adalah halaman <b>about</b>';
+    return view('about');
 });
 
 Route::get('mahasiswa', function () {
-    return 'Ini adalah halaman <b>mahasiswa</b>';
+    return view('mahasiswa');
 });
 
 Route::get('profile', function () {
-    return 'Ini adalah halaman <b>profile</b>';
+    $nama = 'Ari Sahputra';
+    //return view('profile', compact('nama'));
+    return view('profile', ['nama' => $nama]);
 });
